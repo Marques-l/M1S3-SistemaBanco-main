@@ -1,7 +1,7 @@
 
 namespace M1S3_SistemaBanco
 {
-    public class Cliente
+    public abstract class Cliente //Transformado em abstract
     {
         public string Nome { get; set; }
         public string CPF { get; set; }
@@ -34,20 +34,14 @@ namespace M1S3_SistemaBanco
         }
 
 
-        public string ResumoCliente(){
-           return  $"{NumeroConta} |  {Nome}  | {CPF}";
-        }
+        public abstract string ResumoCliente(); //Transformando o ResumoCliente em abstract
+       
 
         public bool EhMaior(){
             return Idade >= 18;
         }
 
-        private double GetSaldo(){
-            double saldo = 0;
-            foreach(Transacao transacao  in Extrato){
-                saldo += transacao.Valor;
-            }
-            return saldo;
-        }
+        public abstract double GetSaldo(double saldo); // Criado o abstract 
+            
     }
 }
