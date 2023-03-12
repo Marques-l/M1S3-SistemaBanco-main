@@ -4,17 +4,19 @@ using M1S3_SistemaBanco;
 
 List<Cliente> clientes = new List<Cliente>();
 
-clientes.Add(new Cliente("Vitor", "123456", "vitor@email","123", "rua",
-            new DateTime(2002, 5, 15), 1));
+//clientes.Add(new Cliente("Vitor", "123456", "vitor@email","123", "rua", // 'Ocultando isso por enquando, era só exemplo de qualquer
+                                                                            // forma'
+       //      new DateTime(2002, 5, 15), 1));
             
-clientes.Add(new Cliente("Fernando", "123456", "Fernando@email","123", "rua",
-            new DateTime(2002, 5, 15), 2));
+//clientes.Add(new Cliente("Fernando", "123456", "Fernando@email","123", "rua",
+       //      new DateTime(2002, 5, 15), 2));
             
-clientes.Add(new Cliente("Vanessa", "123456", "Vanessa@email","123", "rua",
-            new DateTime(2002, 5, 15), 3));
+//clientes.Add(new Cliente("Vanessa", "123456", "Vanessa@email","123", "rua",
+        //     new DateTime(2002, 5, 15), 3));
+           
 
-clientes.Add(new Cliente("Lucas", "123456", "Lucas@email","123", "rua",
-            new DateTime(2002, 5, 15), 4));
+///clientes.Add(new Cliente("Lucas", "123456", "Lucas@email","123", "rua",
+ //           new DateTime(2002, 5, 15), 4));
 
 
 
@@ -112,7 +114,7 @@ void ExibirClientes(){
 }
 
 void CriarConta(){
-    Cliente cliente = new Cliente();
+    Cliente cliente = new PessoaFisica(); // Essa vai ser a opção da pessoa física
     Console.WriteLine("Data de Nascimento do cliente:");
     cliente.DataNascimento = DateTime.Parse(Console.ReadLine());
     if(!cliente.EhMaior()){
