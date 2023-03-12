@@ -21,5 +21,8 @@ namespace M1S3_SistemaBanco
             }
             return saldo;
         }
+        public override bool EhMaior(){ //Override feito, eu coloquei return true pq pode ser 
+           return true;                 //necessário na frente só p passar direto no códico com a condição true.
+        }                                // Não queria mudar na program
     }
 }

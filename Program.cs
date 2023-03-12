@@ -8,8 +8,8 @@ List<Cliente> clientes = new List<Cliente>();
                                                                             // forma'
        //      new DateTime(2002, 5, 15), 1));
             
-//clientes.Add(new Cliente("Fernando", "123456", "Fernando@email","123", "rua",
-       //      new DateTime(2002, 5, 15), 2));
+//clientes.Add(new Cliente("Fernando", "123456", "Fernando@email","123", "rua",// Ia passar um vazio mas já tem um de mesmo nome com 
+       //      new DateTime(2002, 5, 15), 2));                                 // a lista que pode ficar bagunçado com o return. 
             
 //clientes.Add(new Cliente("Vanessa", "123456", "Vanessa@email","123", "rua",
         //     new DateTime(2002, 5, 15), 3));
@@ -117,7 +117,7 @@ void CriarConta(){
     Cliente cliente = new PessoaFisica(); // Essa vai ser a opção da pessoa física
     Console.WriteLine("Data de Nascimento do cliente:");
     cliente.DataNascimento = DateTime.Parse(Console.ReadLine());
-    if(!cliente.EhMaior()){ // Com o override ele entende isso
+    if(!cliente.EhMaior()){ // Com o override ele entende isso, mas cria um elemento meio besta na PessoaJuridica.
       Console.WriteLine("não é possivel abrir a conta pois o CLiente é menor de idade");
       return ;
     }
