@@ -83,7 +83,7 @@ void ExibirExtrato(){
   foreach(Transacao transacao  in contaCliente.Extrato){
     Console.WriteLine(" Data: " + transacao.Data + " Valor: " + transacao.Valor.ToString("C2", new CultureInfo("pt-BR")) );
     saldo += transacao.Valor;
-    //Console.WriteLine($"Data: {transacao.Data} Valor: R$  {transacao.Valor}" );
+    //Console.WriteLine($"Data: {transacao.Data} Valor: R$  {transacao.Valor}" ); 'Anotação do professor'
   }
 
   Console.WriteLine("Saldo = " + contaCliente.Saldo);
@@ -100,7 +100,7 @@ Cliente BuscarClientePorNumeroDeConta (int numeroConta){;
   }
   // mesma coisa que o foreach
   // for(int i =0; i < clientes.Count; i++){
-  //    if(clientes[i].NumeroConta == numeroConta);
+  //    if(clientes[i].NumeroConta == numeroConta); 'Anotação do professor'
   //     return clientes[i];
   // }
   return null;

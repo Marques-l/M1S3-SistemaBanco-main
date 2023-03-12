@@ -1,7 +1,7 @@
 
 namespace M1S3_SistemaBanco
 {
-    public abstract class Cliente //Transformado em abstract
+    public abstract class Cliente //Transformado em abstract.
     {
         public string Nome { get; set; }
         public string CPF { get; set; }
@@ -34,14 +34,14 @@ namespace M1S3_SistemaBanco
         }
 
 
-        public abstract string ResumoCliente(); //Transformando o ResumoCliente em abstract
+        public abstract string ResumoCliente(); //Transformando o ResumoCliente em abstract.
        
 
-        public bool EhMaior(){
-            return Idade >= 18;
-        }
+      //  public bool EhMaior(){ ' Isso fica como só no pesoa física pq não Existe a necessidade dessa informação na pessoa jurídica.'
+        //      return Idade >= 18;
+     //   }
 
-        public abstract double GetSaldo(double saldo); // Criado o abstract 
+        public abstract double GetSaldo(double saldo); // Criado o abstract.
             
     }
 }
