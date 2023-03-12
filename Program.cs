@@ -117,7 +117,7 @@ void CriarConta(){
     Cliente cliente = new PessoaFisica(); // Essa vai ser a opção da pessoa física
     Console.WriteLine("Data de Nascimento do cliente:");
     cliente.DataNascimento = DateTime.Parse(Console.ReadLine());
-    if(!cliente.EhMaior()){
+    if(!cliente.EhMaior()){ // Com o override ele entende isso
       Console.WriteLine("não é possivel abrir a conta pois o CLiente é menor de idade");
       return ;
     }

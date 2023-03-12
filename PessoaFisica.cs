@@ -19,7 +19,7 @@ namespace M1S3_SistemaBanco
             }
             return saldo;
         }
-        public bool EhMaior(){ 
+        public override bool EhMaior(){ //Override feito
             return Idade >= 18;
         }
     }
