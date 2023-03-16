@@ -7,12 +7,19 @@ namespace M1S3_SistemaBanco
 {
     public class PessoaJuridica :Cliente  // Herdando a classe cliente.
     {   
-         public string Nome { get; set; }        //Colocando as propriedades. 
+         public string RazaoSocial { get; set; }        //Colocando as propriedades. 
          public string CNPJ { get; set; }
 
+          public PessoaJuridica(){  //Construtor vazio para aceitar a instância sem argumento
+
+          }
+          public PessoaJuridica (string razaoSocial, string cnpj){
+              RazaoSocial = razaoSocial; 
+              CNPJ = cnpj; 
+          }
 
          public override string ResumoCliente(){ // Feito o override.
-           return  $"{NumeroConta} |  {Nome}  | {CNPJ}";  //Colocando o CNPJ.
+           return  $"{NumeroConta} |  {RazaoSocial}  | {CNPJ}";  //Colocando o CNPJ e razão social aqui
         }
         public override double GetSaldo(double valor){ // Feito o override.
             double saldo = 0;
@@ -21,8 +28,17 @@ namespace M1S3_SistemaBanco
             }
             return saldo;
         }
-        public override bool EhMaior(){ //Override feito, eu coloquei return true pq pode ser 
-           return true;                 //necessário na frente só p passar direto no códico com a condição true.
-        }                                // Não queria mudar na program
+        
+
+    protected override double GetSaldo() //Implementou uma classe protected, indicação do VsCode
+    {
+      throw new NotImplementedException();
     }
+
+    public override bool EhMaior() // 
+    {
+     return true; 
+    }
+   
+  }
 }

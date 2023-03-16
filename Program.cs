@@ -23,11 +23,12 @@ List<Cliente> clientes = new List<Cliente>();
 string opcao;
 do{
   Console.WriteLine("Bem vindos ao Banco FULL STACK BANCK, escolha uma opção");
-  Console.WriteLine("1 - Criar Conta ");
+  Console.WriteLine("1 - Criar Conta - Pessoa Física");
   Console.WriteLine("2 - Adicionar Transacao");
   Console.WriteLine("3 - Consultar Extrato");
   Console.WriteLine("4 - Sair");
   Console.WriteLine("5 - Exibir Clientes");
+  Console.WriteLine("6 - Criar Conta - Pessoa Jurídica");
   opcao = Console.ReadLine();
 
   if(opcao == "1"){
@@ -41,6 +42,9 @@ do{
   }
   else if (opcao == "3"){
     ExibirExtrato();
+  }
+  else if (opcao == "6"){
+    CriarContaPessoaJuridica(); //
   }
 
   Console.WriteLine("Tecle Enter para continuar");
@@ -57,7 +61,7 @@ void AdicionarTransacao(){
   Cliente contaCliente = BuscarClientePorNumeroDeConta(numeroConta);
 
   if (contaCliente == null){
-    Console.WriteLine("Conta não cadastrada, favor cadastrar antes");
+    Console.WriteLine("Conta não cadastrada, por favor cadastre uma conta antes"); // Alterando bobagem 
     return;
   }
 
@@ -114,7 +118,7 @@ void ExibirClientes(){
 }
 
 void CriarConta(){
-    Cliente cliente = new PessoaFisica(); // Essa vai ser a opção da pessoa física
+    Cliente cliente = new PessoaFisica(); // Essa vai ser a opção da pessoa física, chorou pedindo os argumentos 
     Console.WriteLine("Data de Nascimento do cliente:");
     cliente.DataNascimento = DateTime.Parse(Console.ReadLine());
     if(!cliente.EhMaior()){ // Com o override ele entende isso, mas cria um elemento meio besta na PessoaJuridica.
@@ -126,6 +130,31 @@ void CriarConta(){
     cliente.Nome = Console.ReadLine();
     Console.WriteLine("CPF do cliente:");
     cliente.CPF = Console.ReadLine();
+    Console.WriteLine("Endereco do cliente:");
+    cliente.Endereco = Console.ReadLine();
+    Console.WriteLine("Telefone do cliente:");
+    cliente.Telefone = Console.ReadLine();
+    Console.WriteLine("Email do cliente:");
+    cliente.Email = Console.ReadLine();
+    Console.WriteLine("Numero Da Conta");
+    cliente.NumeroConta = int.Parse(Console.ReadLine());
+    clientes.Add(cliente);
+}
+ void CriarContaPessoaJuridica(){ 
+// Essa vai ser a opção da pessoa juridica, então toda essa parte de idade é tirada 
+   // Console.WriteLine("Data de Nascimento do cliente:");
+  //  cliente.DataNascimento = DateTime.Parse(Console.ReadLine());
+   // if(!cliente.EhMaior()){ // Com o override ele entende isso, mas cria um elemento meio besta na PessoaJuridica.
+    //  Console.WriteLine("não é possivel abrir a conta pois o CLiente é menor de idade");
+   //   return ;
+    
+  //  Console.WriteLine("A idade do cliente é " + cliente.Idade);
+
+    PessoaJuridica cliente = new PessoaJuridica(); //Eu achei que tinha ficar como classe cliente, mas não tá dando certo. Se pegar a filha ele entende que são propriedades da Cliente
+    Console.WriteLine("Razão social da empresa:"); // Razão social ao invés de nome 
+    cliente.RazaoSocial = Console.ReadLine();
+    Console.WriteLine("CNPJ da empresa:");
+    cliente.CNPJ = Console.ReadLine();
     Console.WriteLine("Endereco do cliente:");
     cliente.Endereco = Console.ReadLine();
     Console.WriteLine("Telefone do cliente:");
