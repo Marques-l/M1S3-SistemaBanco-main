@@ -14,9 +14,10 @@ namespace M1S3_SistemaBanco.Model
           public PessoaJuridica(){  //Construtor vazio para aceitar a instância sem argumento
 
           }
-          public PessoaJuridica (string razaoSocial, string cnpj){
+          public PessoaJuridica (string razaoSocial, string cnpj, double saldo){
               RazaoSocial = razaoSocial; 
               CNPJ = cnpj; 
+              Saldo = saldo; 
           }
 
          public override string ResumoCliente(){ // Feito o override.

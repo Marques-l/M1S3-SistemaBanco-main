@@ -14,9 +14,10 @@ namespace M1S3_SistemaBanco.Model
     public PessoaFisica(){
 
         }
-          public PessoaFisica(string nome, string cpf){
+          public PessoaFisica(string nome, string cpf, double saldo){
           Nome =nome; 
           CPF = cpf; 
+          Saldo = saldo; 
         }
        
          public override string ResumoCliente(){ // Feito o override.
