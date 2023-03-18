@@ -10,11 +10,10 @@ namespace M1S3_SistemaBanco
         public string Endereco { get; set; }
         public DateTime DataNascimento { get; set; }
         public int NumeroConta { get; set; }
-        public double Saldo {  get{return GetSaldo() ; }private set{} }
+        public double Saldo {  get; set; } //Tirei o private daqui, pois ele não conseguiria preecher isso aqui, acho. 
 
-        protected abstract double GetSaldo(); // Sugerido pelo VsCode
 
-        public int Idade { get {return (int)(Math.Floor((DateTime.Now - DataNascimento).TotalDays / 365.25)); } private set {} }
+     public int Idade { get {return (int)(Math.Floor((DateTime.Now - DataNascimento).TotalDays / 365.25)); } private set {} }
         
         public List<Transacao> Extrato { get; set; }
         
@@ -39,11 +38,9 @@ namespace M1S3_SistemaBanco
 
         public abstract string ResumoCliente(); //Transformando o ResumoCliente em abstract.
        
+        public abstract bool EhMaior();
 
+        public abstract double GetSaldo(double valor); 
         
-        
-
-        public abstract double GetSaldo(double saldo); // Criado o abstract.
-    public abstract bool EhMaior();
   }
 }

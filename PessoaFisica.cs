@@ -7,9 +7,15 @@ namespace M1S3_SistemaBanco
 {
     public class PessoaFisica :Cliente // Herdando a classe cliente 
     {
-         public string Nome { get; set; }   //Colocando as propriedades.
-         public string CPF { get; set; }
+         public new string Nome { get; set; }   //Colocando as propriedades.
+         public new string CPF { get; set; } // O VsCode deu essa opção de new para omitir 
+        public PessoaFisica(){
 
+        }
+          public PessoaFisica(string nome, string cpf){
+          Nome =nome; 
+          CPF = cpf; 
+        }
        
          public override string ResumoCliente(){ // Feito o override.
            return  $"{NumeroConta} |  {Nome}  | {CPF}"; //Com o CPF para a pessoa física.
@@ -24,11 +30,6 @@ namespace M1S3_SistemaBanco
         public override bool EhMaior(){ // Se colocasse só nessa classe muito do que está no código teria que mudar, 
             return Idade >= 18;        // preferi criar pelo abstract e retornar true no PessoaJuridica
         }
-
-    protected override double GetSaldo() //Implementou uma classe protected, indicação do VsCode
-    {
-      throw new NotImplementedException();
-    }
 
     
   }

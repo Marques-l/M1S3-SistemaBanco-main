@@ -30,15 +30,11 @@ namespace M1S3_SistemaBanco
         }
         
 
-    protected override double GetSaldo() //Implementou uma classe protected, indicação do VsCode
-    {
-      throw new NotImplementedException();
-    }
-
     public override bool EhMaior() // 
     {
      return true; 
     }
-   
+
+    
   }
 }
