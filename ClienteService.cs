@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace M1S3_SistemaBanco
 {
-    public class ClienteService 
+    public class ClienteService :IClienteService 
     {
          static List<Cliente> clientes = new List<Cliente>();
 
@@ -76,6 +76,10 @@ public void ExibirClientes(){
     Console.WriteLine(clientes[i].ResumoCliente());
   }
 }
-    
-}
+
+    public Cliente BuscarClientePorNumeroDeConta()
+    {
+      throw new NotImplementedException();
+    }
+  }
 }
