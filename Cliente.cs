@@ -10,7 +10,7 @@ namespace M1S3_SistemaBanco
         public string Endereco { get; set; }
         public DateTime DataNascimento { get; set; }
         public int NumeroConta { get; set; }
-        public double Saldo {  get; set; } //Tirei o private daqui, pois ele não conseguiria preecher isso aqui, acho. 
+        public double Saldo {  get {return GetSaldo(); }  private set{} } //Tirei o private daqui, pois ele não conseguiria preecher isso aqui, acho. 
 
 
      public int Idade { get {return (int)(Math.Floor((DateTime.Now - DataNascimento).TotalDays / 365.25)); } private set {} }
@@ -40,7 +40,10 @@ namespace M1S3_SistemaBanco
        
         public abstract bool EhMaior();
 
-        public abstract double GetSaldo(); 
+        public virtual double GetSaldo() // Tentando pelo virtual para manter a estrutura e ver se ele retorna o saldo
+        {
+            return Saldo; 
+        } 
         
   }
 }
