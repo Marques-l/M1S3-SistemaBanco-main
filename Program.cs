@@ -1,6 +1,9 @@
 ﻿
 using System.Globalization;
 using M1S3_SistemaBanco;
+using M1S3_SistemaBanco.Model; 
+using M1S3_SistemaBanco.Interfaces;
+using M1S3_SistemaBanco.services;  
 IClienteService  _clienteService = new ClienteService(); 
 ITicketService _ticketeService = new TicketService(); 
 

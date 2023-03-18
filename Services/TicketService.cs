@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using M1S3_SistemaBanco.Model; 
+using M1S3_SistemaBanco.Interfaces; 
 
-namespace M1S3_SistemaBanco
+namespace M1S3_SistemaBanco.services
 {
     public class TicketService :ITicketService
     {

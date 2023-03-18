@@ -1,5 +1,5 @@
 
-namespace M1S3_SistemaBanco
+namespace M1S3_SistemaBanco.Model
 {
     public abstract class Cliente //Transformado em abstract.
     {

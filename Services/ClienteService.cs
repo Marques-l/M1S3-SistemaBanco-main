@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
-namespace M1S3_SistemaBanco
+using M1S3_SistemaBanco.Model;
+using M1S3_SistemaBanco.Interfaces; 
+namespace M1S3_SistemaBanco.services
 {
     public class ClienteService :IClienteService 
     {
