@@ -40,7 +40,7 @@ namespace M1S3_SistemaBanco
        
         public abstract bool EhMaior();
 
-        public abstract double GetSaldo(double valor); 
+        public abstract double GetSaldo(); 
         
   }
 }

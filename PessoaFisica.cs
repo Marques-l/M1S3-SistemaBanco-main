@@ -9,7 +9,9 @@ namespace M1S3_SistemaBanco
     {
          public new string Nome { get; set; }   //Colocando as propriedades.
          public new string CPF { get; set; } // O VsCode deu essa opção de new para omitir 
-        public PessoaFisica(){
+         public new double Saldo {  get {return GetSaldo(); }  private set{} }
+
+    public PessoaFisica(){
 
         }
           public PessoaFisica(string nome, string cpf){
@@ -20,7 +22,7 @@ namespace M1S3_SistemaBanco
          public override string ResumoCliente(){ // Feito o override.
            return  $"{NumeroConta} |  {Nome}  | {CPF}"; //Com o CPF para a pessoa física.
         }
-        public override double GetSaldo(double valor){ // Feito o override.
+        public override double GetSaldo(){ // Feito o override.
             double saldo = 0;
             foreach(Transacao transacao  in Extrato){
                 saldo += transacao.Valor;

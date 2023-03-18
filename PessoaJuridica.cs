@@ -9,6 +9,7 @@ namespace M1S3_SistemaBanco
     {   
          public string RazaoSocial { get; set; }        //Colocando as propriedades. 
          public string CNPJ { get; set; }
+         public new double Saldo {  get {return GetSaldo(); }  private set{} }// Saldo de novo aqui
 
           public PessoaJuridica(){  //Construtor vazio para aceitar a instância sem argumento
 
@@ -21,7 +22,7 @@ namespace M1S3_SistemaBanco
          public override string ResumoCliente(){ // Feito o override.
            return  $"{NumeroConta} |  {RazaoSocial}  | {CNPJ}";  //Colocando o CNPJ e razão social aqui
         }
-        public override double GetSaldo(double valor){ // Feito o override.
+        public override double GetSaldo(){ // Feito o override.
             double saldo = 0;
             foreach(Transacao transacao  in Extrato){
                 saldo += transacao.Valor;
@@ -30,7 +31,7 @@ namespace M1S3_SistemaBanco
         }
         
 
-    public override bool EhMaior() // 
+    public override bool EhMaior() 
     {
      return true; 
     }
