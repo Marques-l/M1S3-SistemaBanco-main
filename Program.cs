@@ -1,8 +1,8 @@
 ﻿
 using System.Globalization;
 using M1S3_SistemaBanco;
-ClienteService  _clienteService = new ClienteService(); 
-TicketService _ticketeService = new TicketService(); 
+IClienteService  _clienteService = new ClienteService(); 
+ITicketService _ticketeService = new TicketService(); 
 
 string opcao;
 do{

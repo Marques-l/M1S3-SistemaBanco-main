@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace M1S3_SistemaBanco
 {
-    public class TicketService
+    public class TicketService :ITicketService
     {
   private ClienteService _clienteService = new ClienteService(); 
   public  void AdicionarTransacao(){
